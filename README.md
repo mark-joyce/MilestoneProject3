@@ -48,27 +48,31 @@ For site visitors - I want them to be able to use the site to find interesting l
 ### Surface
 -
 
-### Mockups & Wireframes
-The following mockups and wireframes were created in the beginning stages of this project to help guide the final design of the site.
-
 
 ## Technologies
 
-### Languages Used
+- [Flask](http://flask.pocoo.org/)
+    - The project uses **Flask** , a Python micro framework to provide a functional and lightweight core for the application
 
--
+- [Jinja2](http://jinja.pocoo.org/docs/2.10/)
+    - This app uses the **Jinja2** for the front-end templating of the routes outlined in the app.py file. 
+    - Modelled on Django's templating style, **Jinja2** is scalable and modular to allow for reusable components
 
-### Libraries
+- [HTML5](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5)
+    - HTML used for the **structure** of the page templates
 
--
-
-### Frameworks
-
--
-
-### Other
-
--
+- [CSS3](https://developer.mozilla.org/en-US/docs/Web/CSS)
+    - Language used to apply styles to each page for **styling of the components** (e.g. colour schemes, fonts, images)
+    
+- [Javascript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+    - I have used Javascript in the add/edit recipe forms to power the logic behind the 'Add Ingredient' and 'Remove Ingredient' buttons. I have also used this to create a validation error for the Materialize select component as there is a known issue with this component showing error messages.
+    - JS has also been used to power the sliding side menu action on smaller screen sizes
+    
+- [Materialize](https://materializecss.com/)
+    - I have used Materialize throughout the project to create navbars, side menus, input types in forms and icons
+   
+- [MongoDB](https://mlab.com/welcome/)
+    - I have used MLab to implement a **database** in this project. This is where all of the user, recipe and category data is stored.
 
 ## Features
 
