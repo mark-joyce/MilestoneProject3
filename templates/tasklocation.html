@@ -1,0 +1,36 @@
+{% extends 'base.html'%} {% block content %}
+
+<div class="center-align">
+	<h4> <i class="material-icons icon">place</i> {{task.location_name}}</h4>
+</div>
+
+<div class="row">
+	<div class="col s6">
+            <p><i class="material-icons icon">public</i> Continent: {{task.category_name}}</p>
+            <p><i class="material-icons icon">today</i> Date of Recommendation: {{task.date_added}}</p>
+            <p><i class="material-icons icon">rate_review</i> I Recommend This Location Because: " {{task.user_review}} "</p>
+	</div>
+	<div class="col s6">
+            <p><i class="material-icons icon">attach_money</i> Average Rent In Location: {{task.average_rent}}</p>
+            <p><i class="material-icons icon">local_offer</i> Average Property Price In Location: {{task.average_propertyprice}}</p>
+            <p><i class="material-icons icon">account_balance</i> Capital Gains Tax Rate Of Country: {{task.cgt_tax}}</p>
+            <p><i class="material-icons icon">account_balance_wallet</i> Income Tax Rate Of Country: {{task.income_tax}}</p>
+            <p><i class="material-icons icon">home</i> Rental Income Tax Of Country: {{task.rental_tax}}</p>
+            <p><i class="material-icons icon">house</i> Best Property Type To Buy In Location: {{task.bestproperty_type}}</p>
+	</div>
+</div>
+<hr>
+<div class="row">
+	<div class="col s12">
+            <p><i class="material-icons icon">insert_link</i> Link To Google Maps Of Location: {{task.googlemaps_link}}</p>
+            <p><i class="material-icons icon">insert_link</i> Link To Local Property Website Of Location: {{task.localproperty_link}}</p>
+            <p><i class="material-icons icon">insert_link</i> Link To Wikipedia Page Of Location: {{task.wikipage_link}}</p>
+	</div>
+</div>
+
+<div class="row center-align">
+        <a href="{{url_for('edit_task', task_id=task._id)}}" class="waves-effect waves-light btn">Edit</a>
+        <a href="{{url_for('delete_task', task_id=task._id)}}" class="waves-effect waves-light btn">Delete</a>
+</div>
+
+{% endblock %}

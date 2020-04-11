@@ -1,0 +1,30 @@
+{% extends 'base.html'%} {% block content %}
+
+<div class="center-align">
+<h4>Real Estate Investing Locations - Recommended & Reviewed By You</h4>
+</div>
+<div class="row">
+    <ul class="collapsible popout" data-collapsible="accordion">
+        {% for task in tasks %}
+        <li>
+            <div class="collapsible-header">
+             <div class="col s10">
+                <div class="task_header">
+                <i class="material-icons">flag</i>
+                    <strong>{{task.location_name}}</strong> - {{task.date_added}}
+                </div>
+             </div>
+                <div class="col s2">
+                    <a href="{{ url_for('task', task_id=task._id) }}" class="waves-effect waves-light btn">Learn More</a>                   
+                </div>
+            </div>
+            <div class="collapsible-body">
+                <span>
+                ⭐⭐⭐⭐⭐ - "{{task.user_review}}"
+            </span>
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}

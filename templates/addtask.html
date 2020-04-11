@@ -1,0 +1,121 @@
+{% extends 'base.html' %} {% block content %}
+
+<div class="center-align">
+<h4>Add Location:</h4>
+</div>
+<div class="row">
+    <form action="{{ url_for('insert_task') }}" method="POST" class="col s12">
+		<div class="row">
+			<div class="input-field col s12">
+				<i class="material-icons prefix">language</i>
+				<select id="category" name="category_name" required="required">
+					<option value="" disabled selected>Choose Continent</option>
+						{% for cat in categories %}
+					<option value="{{cat.category_name}}">{{cat.category_name}}</option>
+						{% endfor %}
+					</select>
+				<label>Continent Of Location:</label>
+			</div>
+		</div>
+
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="material-icons prefix">flag</i>
+                <input id="location_name" name="location_name" type="text" required>
+                <label for="icon_prefix">Place, Country (Example - Marbella, Spain)</label>
+            </div>
+        </div>
+        <div class="row" id="matfix">
+            <div class="input-field col s12">
+                <i class="material-icons prefix">today</i>
+                <input id="date_added" name="date_added" type="text" class="datepicker" required>
+                <label for="icon_prefix">Date Of Recommendation (Today)</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="material-icons prefix">rate_review</i>
+                <textarea name="user_review" id="user_review" class="materialize-textarea" required></textarea>
+                <label for="icon_telephone">I Recommend This Location Because:</label>
+            </div>
+        </div>
+        <div class="row">
+
+            <div class="input-field col s6">
+                <i class="material-icons prefix">attach_money</i>
+                <input id="average_rent" name="average_rent" type="text" required>
+                <label for="icon_prefix">Average Monthly Rent In Local Currency Of Location:</label>
+            </div>
+        
+            <div class="input-field col s6">
+                <i class="material-icons prefix">local_offer</i>
+                <input id="average_propertyprice" name="average_propertyprice" type="text" required>
+                <label for="icon_prefix">Average Property Price In Local Currency Of Location:</label>
+            </div>
+
+        </div>
+
+        <div class="row">
+
+            <div class="input-field col s4">
+                <i class="material-icons prefix">account_balance</i>
+                <input id="cgt_tax" name="cgt_tax" type="text" required>
+                <label for="icon_prefix">Capital Gains Tax (%) Of Country:</label>
+            </div>
+      
+       
+            <div class="input-field col s4">
+                <i class="material-icons prefix">account_balance_wallet</i>
+                <input id="income_tax" name="income_tax" type="text" required>
+                <label for="icon_prefix">Income Tax Rate (%) Of Country:</label>
+            </div>
+       
+        
+            <div class="input-field col s4">
+                <i class="material-icons prefix">home</i>
+                <input id="rental_tax" name="rental_tax" type="text" required>
+                <label for="icon_prefix">Rental Income Tax Rate (%) Of Country:</label>
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="material-icons prefix">house</i>
+                <input id="bestproperty_type" name="bestproperty_type" type="text" required>
+                <label for="icon_prefix">Commercial/Residential (House, Apartment, Duplex) - Best Property Type To Buy:</label>
+            </div>
+        </div>
+
+        <div class="row">
+
+            <div class="input-field col s4">
+                <i class="material-icons prefix">insert_link</i>
+                <input id="googlemaps_link" name="googlemaps_link" type="text" required>
+                <label for="icon_prefix">Link To Google Maps Of Location:</label>
+            </div>
+
+            <div class="input-field col s4">
+                <i class="material-icons prefix">insert_link</i>
+                <input id="localproperty_link" name="localproperty_link" type="text" required>
+                <label for="icon_prefix">Link To Local Property Website Of Location:</label>
+            </div>
+
+            <div class="input-field col s4">
+                <i class="material-icons prefix">insert_link</i>
+                <input id="wikipage_link" name="wikipage_link" type="text" required>
+                <label for="icon_prefix">Link To Wikipedia Page Of Location:</label>
+            </div>
+
+        </div>
+
+        <div class="row center-align">
+            <button class="btn waves-effect waves-light" type="submit" name="action">Add Location
+                <i class="material-icons right">place</i>
+             </button>
+        </div>
+
+    </form>
+</div>
+
+{% endblock %}
